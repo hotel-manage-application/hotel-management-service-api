@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class Address {
     @Id
     @Column(name = "address_id")
-    private int addressId;
+    private String addressId;
 
     @Column(name = "address_line",nullable = false,length = 50)
     private String addressLine;

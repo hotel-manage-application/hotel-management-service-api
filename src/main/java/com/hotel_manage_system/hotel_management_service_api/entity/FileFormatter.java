@@ -22,5 +22,5 @@ public class FileFormatter {
     @Column(name = "hash")
     private  byte[] hash;
 
-
+//db maping eka banne ctrl+shift+alt+u obnna
 }
