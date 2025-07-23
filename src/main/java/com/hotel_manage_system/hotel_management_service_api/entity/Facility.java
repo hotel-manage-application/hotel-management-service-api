@@ -11,4 +11,9 @@ public class Facility {
 
     @Column(name = "facility_name",nullable = false,length = 50)
     private String facilityName;
+
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name = "room_id" )
+    private Room room;
 }

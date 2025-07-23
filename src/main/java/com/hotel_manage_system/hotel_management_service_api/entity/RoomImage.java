@@ -7,6 +7,12 @@ import jakarta.persistence.*;
 public class RoomImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long roomId;
-    private String roomImage;
+    private long id;
+
+    @Embedded
+    private FileFormatter fileFormatter;
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name = "room_id" )
+    private Room room;
 }

@@ -22,6 +22,5 @@ public class FileFormatter {
     @Column(name = "hash")
     private  byte[] hash;
 
-    @Embedded
-    private FileFormatter fileFormatter;
+
 }

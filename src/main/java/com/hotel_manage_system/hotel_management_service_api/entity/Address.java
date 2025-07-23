@@ -1,9 +1,6 @@
 package com.hotel_manage_system.hotel_management_service_api.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
@@ -28,4 +25,9 @@ public class Address {
 
     @Column(name = "latitude",nullable = false,length = 50)
     private BigDecimal latitude;
+
+    @OneToOne
+    @JoinColumn(name = "branch_id")
+    private Branch branch;
+    //patial eka branch ek  total eka address eka  patial eke pk eka total pattat send karanwa
 }

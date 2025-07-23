@@ -1,11 +1,9 @@
 package com.hotel_manage_system.hotel_management_service_api.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "room")
@@ -28,5 +26,18 @@ public class Room {
 
     @Column(name = "is_available",length = 50,nullable = false)
     private  boolean isAvailable;
+
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name = "branch_id" )
+    private Branch branch;
+
+    //room ekaktfacility godak tiyennwa
+    @OneToMany(mappedBy = "room",cascade = CascadeType.ALL)
+    private List<Facility> facilities;
+
+    //eka room ekakta image godak tiyennwa
+    @OneToMany(mappedBy = "room",cascade = CascadeType.ALL)
+    private List<RoomImage> roomImages;
 
 }
