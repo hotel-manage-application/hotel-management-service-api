@@ -1,12 +1,19 @@
 package com.hotel_manage_system.hotel_management_service_api.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
 @Table(name = "room")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+
 public class Room {
     @Id
     @Column(name = "room_id",length = 50)

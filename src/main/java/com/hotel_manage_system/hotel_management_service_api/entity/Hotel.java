@@ -1,6 +1,7 @@
 package com.hotel_manage_system.hotel_management_service_api.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.sql.Blob;
@@ -10,17 +11,22 @@ import java.util.List;
 
 @Entity
 @Table(name = "hotel")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 
 public class Hotel {
     @Id
     @Column(name = "hotel_id")
-    private int hotelId;
+    private String hotelId;
 
     @Column(name = "hotel_name",nullable = false,length = 50)
     private String hotelName;
 
     @Column(name = "star_rating",nullable = false)
-    private String startRating;
+    private int startRating;
 
     @Column(nullable = false)
     @Lob

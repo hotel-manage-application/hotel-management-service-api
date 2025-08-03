@@ -1,9 +1,16 @@
 package com.hotel_manage_system.hotel_management_service_api.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "facility")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+
 public class Facility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
