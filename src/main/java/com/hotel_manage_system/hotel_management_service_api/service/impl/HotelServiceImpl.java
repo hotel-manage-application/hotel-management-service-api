@@ -41,8 +41,8 @@ public class HotelServiceImpl implements HotelService {
       selectedHotel.setHotelName(dto.getHotelName());
       selectedHotel.setUpdatedAt(LocalDateTime.now());
       selectedHotel.setDescription(byteCodeHandler.stringToBlob(dto.getDescription()));
-      selectedHotel.setStartRating(dto.getStarRating());
-      selectedHotel.setStartingfom(dto.getStartingFrom());
+      selectedHotel.setStarRating(dto.getStarRating());
+      selectedHotel.setStartingForm(dto.getStartingFrom());
       hotelRepo.save(selectedHotel);
     }
 
@@ -92,12 +92,12 @@ public class HotelServiceImpl implements HotelService {
                 Hotel.builder()
                         .hotelName(dto.getHotelName())
                         .hotelId(UUID.randomUUID().toString())
-                        .startRating(dto.getStarRating())
+                        .starRating(dto.getStarRating())
                         .description(byteCodeHandler.stringToBlob(dto.getDescription()))   //converting string to blob
                         .createdAt(LocalDateTime.now())
                         .updatedAt(LocalDateTime.now())
                         .activeStatus(true)
-                        .startingfom(dto.getStartingFrom())
+                        .startingForm(dto.getStartingFrom())
 
                         .build();
     }
@@ -107,12 +107,12 @@ public class HotelServiceImpl implements HotelService {
                 ResponseHotelDto.builder()
                         .hotelName(hotel.getHotelName())
                         .hotelId(hotel.getHotelId())
-                        .starRating(hotel.getStartRating())
+                        .starRating(hotel.getStarRating())
                         .description(byteCodeHandler.blobToString(hotel.getDescription()))   //converting  blob to string
                         .createdAt(LocalDateTime.now())
                         .updatedAt(LocalDateTime.now())
                         .activeStatus(hotel.isActiveStatus())
-                        .startingFrom(hotel.getStartingfom())
+                        .startingFrom(hotel.getStartingForm())
                         .branches(
                                 hotel.getBranches().stream().map(e-> {
                                     try {

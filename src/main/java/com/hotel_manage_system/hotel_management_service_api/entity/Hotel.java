@@ -26,7 +26,7 @@ public class Hotel {
     private String hotelName;
 
     @Column(name = "star_rating",nullable = false)
-    private int startRating;
+    private int starRating;
 
     @Column(nullable = false)
     @Lob
@@ -42,7 +42,7 @@ public class Hotel {
     private boolean activeStatus;
 
     @Column(name = "starting_from")
-    private BigDecimal startingfom;
+    private BigDecimal startingForm;
 
     /*ka hotel ekakta branch godak tiyenna puluwn*/
     @OneToMany(mappedBy = "hotel",cascade = CascadeType.ALL)
